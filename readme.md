@@ -43,16 +43,15 @@ terraform/
 ## ⚙️ 실행 방법
 
 ```bash
-# 테라폼 시작
-terraform init
-
-# 변경 사항 확인
-terraform plan -var-file="terraform.tfvars"
-
-# 클러스터 생성
-terraform apply -var-file="terraform.tfvars"
-
-# 클러스터 생성 후, 다음 명령어로 kubectl 접속을 위한 kubeconfig를 설정할 수 있습니다
-aws eks update-kubeconfig --region ap-northeast-2 --name newords-eks-cluster
+chmod +x start.sh
+./start.sh
 ```
 
+---
+
+## ⚙️ 삭제 방법
+
+```bash
+chmod +x delete.sh
+./delete.sh
+```

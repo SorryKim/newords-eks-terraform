@@ -11,6 +11,11 @@ variable "private_subnet_ids" {
   type = list(string)
 }
 
+variable "security_group_ids" {
+  type        = list(string)
+  description = "기존 보안 그룹 ID 리스트"
+}
+
 variable "node_instance_type" {
   default = "t3.medium"
 }
@@ -27,11 +32,7 @@ variable "min_capacity" {
   default = 1
 }
 
-variable "ec2_ssh_key" {
-  type = string
-}
-
-variable "security_group_ids" {
-  type = list(string)
-  description = "기존에 생성된 보안 그룹 ID 목록"
+variable "ami_id" {
+  description = "Ubuntu 22.04 AMI ID"
+  type        = string
 }

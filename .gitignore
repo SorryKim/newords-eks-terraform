@@ -1,6 +1,5 @@
 # Terraform state
-*.tfstate
-*.tfstate.backup
+*.tfstate*
 
 # Terraform vars (보통 민감 정보 포함)
 *.tfvars
