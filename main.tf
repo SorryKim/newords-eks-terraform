@@ -22,8 +22,20 @@ module "eks" {
       min_capacity           = var.min_capacity
       vpc_security_group_ids = var.security_group_ids
 
-      ami_type = "CUSTOM"
-      ami_id   = var.ami_id
+      ami_type = "AL2_x86_64"
+      ami_id   = null
+
+      key_name = var.key_name
+
+      launch_template = {
+        name    = "ubuntu-node"
+        version = "$Latest"
+        user_data = base64encode(<<EOF
+#!/bin/bash
+/etc/eks/bootstrap.sh ${var.cluster_name}
+EOF
+        )
+      }
 
       metadata_options = {
         http_endpoint = "enabled"

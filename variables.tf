@@ -32,6 +32,10 @@ variable "min_capacity" {
   default = 1
 }
 
+variable key_name {
+  type = string
+}
+
 variable "ami_id" {
   description = "Ubuntu 22.04 AMI ID"
   type        = string
