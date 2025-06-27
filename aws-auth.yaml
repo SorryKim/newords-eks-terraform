@@ -4,9 +4,8 @@ metadata:
   name: aws-auth
   namespace: kube-system
 data:
-  mapRoles: |
-    - rolearn: ${node_role_arn}
-      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - userarn: arn:aws:iam::555182148638:user/sorrykim
+      username: admin
       groups:
-        - system:bootstrappers
-        - system:nodes
+        - system:masters

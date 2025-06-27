@@ -36,6 +36,10 @@ variable key_name {
   type = string
 }
 
+variable admin_user_arn {
+  type = string
+}
+
 variable "ami_id" {
   description = "Ubuntu 22.04 AMI ID"
   type        = string
